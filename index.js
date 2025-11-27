@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
           Phone: ${p.phone}<br/>
           Email: ${p.email}<br/>
           Address: ${p.address}
+          City:${p.city}<br/>}
+          State:${p.state}<br/>
+          Zipcode:${p.state}<br/>
+          Country:${p.state}
+          
         </li>
       `
     )
@@ -30,6 +35,10 @@ app.get("/", (req, res) => {
       <label>Phone: <input name="phone" /></label><br/>
       <label>Email: <input name="email" type="email" /></label><br/>
       <label>Address: <input name="address" /></label><br/>
+      <label>Address: <input name="city" /></label><br/>
+      <label>Address: <input name="state" /></label><br/>
+      <label>Address: <input name="zipcode" /></label><br/>
+      <label>Address: <input name="country" /></label><br/>
       <button type="submit">Create Person</button>
     </form>
 
@@ -41,7 +50,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/person", (req, res) => {
-  const { firstName, lastName, age, phone, email, address } = req.body;
+  const { firstName, lastName, age, phone, email, address ,city,state,zipcode,country} = req.body;
 
   if (firstName || lastName) {
     persons.push({
@@ -50,7 +59,11 @@ app.post("/person", (req, res) => {
       age: age || "",
       phone: phone || "",
       email: email || "",
-      address: address || ""
+      address: address || "",
+      city: city || "",
+      state: state || "",
+      zipcode: zipcode || "",
+      country: country || ""
     });
   }
 
@@ -60,3 +73,4 @@ app.post("/person", (req, res) => {
 app.listen(port, () => {
   console.log(`myapp listening on port ${port}`);
 });
+
