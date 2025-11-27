@@ -13,8 +13,10 @@ app.get("/", (req, res) => {
       (p) => `
         <li class="person-card">
           <div class="person-name">
-            ${p.firstName} ${p.lastName} ${p.age ? `(${p.age})` : ""}
+            ${p.firstName} ${p.lastName}
           </div>
+<div><strong>Age:</strong> ${p.age || "-"}</div>
+          
           <div><strong>Phone:</strong> ${p.phone || "-"}</div>
           <div><strong>Email:</strong> ${p.email || "-"}</div>
           <div><strong>Address:</strong> ${p.address || "-"}</div>
@@ -213,3 +215,4 @@ app.post("/person", (req, res) => {
 app.listen(port, () => {
   console.log(`myapp listening on port ${port}`);
 });
+
