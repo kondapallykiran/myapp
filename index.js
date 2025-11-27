@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
           Address: ${p.address}
           City:${p.city}<br/>}
           State:${p.state}<br/>
-          Zipcode:${p.state}<br/>
-          Country:${p.state}
+          Zipcode:${p.zipcode}<br/>
+          Country:${p.country}
           
         </li>
       `
@@ -73,5 +73,6 @@ app.post("/person", (req, res) => {
 app.listen(port, () => {
   console.log(`myapp listening on port ${port}`);
 });
+
 
 
