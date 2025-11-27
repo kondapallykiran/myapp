@@ -35,10 +35,10 @@ app.get("/", (req, res) => {
       <label>Phone: <input name="phone" /></label><br/>
       <label>Email: <input name="email" type="email" /></label><br/>
       <label>Address: <input name="address" /></label><br/>
-      <label>Address: <input name="city" /></label><br/>
-      <label>Address: <input name="state" /></label><br/>
-      <label>Address: <input name="zipcode" /></label><br/>
-      <label>Address: <input name="country" /></label><br/>
+      <label>city: <input name="city" /></label><br/>
+      <label>state: <input name="state" /></label><br/>
+      <label>zipcode: <input name="zipcode" /></label><br/>
+      <label>country: <input name="country" /></label><br/>
       <button type="submit">Create Person</button>
     </form>
 
@@ -73,4 +73,5 @@ app.post("/person", (req, res) => {
 app.listen(port, () => {
   console.log(`myapp listening on port ${port}`);
 });
+
 
